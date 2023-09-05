@@ -33,3 +33,9 @@ db.users.insertOne({
   username: "exampleUser",
   password: "hashedPassword"
 })
+
+db.won_pastries.insertOne({
+  name: "Chocolate Cake",
+  user: "exampleUser",
+  wonDate: new Date()  // Add the current date and time
+})
