@@ -194,3 +194,16 @@ export const winners = async (req, res) => {
       res.status(500).send('Error fetching winners data');
     }
 }
+
+export const logout = (req, res) => {
+  // Destroy the user's session to reset everything
+  req.session.destroy(err => {
+    if (err) {
+      console.error('Error destroying session:', err);
+      // Handle the error if necessary
+    } else {
+      // Redirect the user to a page after logout (e.g., home page)
+      res.redirect('/');
+    }
+  });
+}
