@@ -15,6 +15,7 @@
     <% if (successMessage) { %>
       <div class="success-message"><%= successMessage %></div>
     <% } %>
+   
     <section class="game-container">
       <div class="dice-container">
         <h2>Roll the Dice</h2>
@@ -74,7 +75,7 @@
         <h2><%= message%></h2>
     <%}%>
 
-    <% if (names) { %>
+    <% if (names && names.length > 0) { %>
         <h2>Names:</h2>
         <ul>
           <% names.forEach(function(name) { %>
@@ -82,6 +83,22 @@
           <% }); %>
         </ul>
       <% } %>
+
+      <% if (user) { %>
+        <!-- Container for both buttons, aligning one to the right and one to the left -->
+        <div class="button-container">
+          <!-- Logout button, aligned to the left -->
+          <div class="logout-container">
+            <a href="/logout" class="logout-button">Logout</a>
+          </div>
+    
+          <!-- "See Results" button, aligned to the right -->
+          <div class="see-results-container">
+            <a href="/winners" class="see-results-button">See Results</a>
+          </div>
+        </div>
+      <% } %>
+      
   </main>
 
 

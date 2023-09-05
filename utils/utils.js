@@ -45,3 +45,17 @@ export function checkForDouble(rollResults) {
     return false; // No Double found
 }
   
+
+// Define the formatDate function to include date and time
+export function formatDate(date) {
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZoneName: 'short',
+  };
+  return new Date(date).toLocaleDateString(undefined, options);
+}

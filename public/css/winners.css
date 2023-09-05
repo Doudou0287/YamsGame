@@ -1,0 +1,32 @@
+/* winners.css */
+
+/* Style the entire winners list */
+.winners-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style each winner item */
+.winner-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
+
+/* Style the username */
+.winner-username {
+    font-weight: bold;
+}
+
+/* Style the date */
+.winner-date {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Style the pastry name */
+.winner-pastry-name {
+    font-style: italic;
+    color: #333;
+}

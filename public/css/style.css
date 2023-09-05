@@ -87,7 +87,7 @@ body, h1, p {
   
 
   
-  .button-container {
+  .button-container1 {
     margin: 10px 0px;
     display: flex;
     flex-direction: column;
@@ -276,3 +276,34 @@ body, h1, p {
   border: 1px solid #4cae4c; /* Green border */
 }
 
+/* Style for the buttons container div */
+.button-container {
+  display: flex; 
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.logout-button {
+  background-color: #ff0000; /* Red background color */
+  color: #fff; /* White text color */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Style for the "See Results" button */
+.see-results-container {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.see-results-button {
+  background-color: #007bff; /* Blue background color */
+  color: #fff; /* White text color */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}

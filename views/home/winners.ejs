@@ -1,0 +1,27 @@
+<!-- winners.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winners</title>
+    <link rel="stylesheet" href="css/winners.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Winners</h1>
+    <ul class="winners-list">
+        <% for (const winner of winnersData) { %>
+            <li class="winner-item">
+                <div class="winner-info">
+                    <span class="winner-username"><strong><%= winner.user %> </strong></span>
+                    <span class="winner-date"><%= formatDate(winner.wonDate) %></span>
+                </div>
+                <div class="winner-pastry">
+                    <span class="winner-pastry-name"><em><%= winner.name %></em></span>
+                </div>
+            </li>
+        <% } %>
+    </ul>
+</body>
+</html>

@@ -9,7 +9,7 @@ export const checkUsernameExistence = async (req, res, next) => {
   
       if (existingUser) {
         req.session.errorMessage = 'Username already exists';
-        return res.redirect('/'); // Redirect back to the signup page
+        return res.redirect('/login'); // Redirect back to the signup page
       }
   
       next();
