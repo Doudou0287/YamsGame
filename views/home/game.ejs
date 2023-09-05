@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="game.js" defer></script>
+  <title>Chocolatey Game - Play Now</title>
+</head>
+<body>
+  <header>
+    <h1>Chocolatey Game</h1>
+  </header>
+  <main>
+    <% if (successMessage) { %>
+      <div class="success-message"><%= successMessage %></div>
+    <% } %>
+    <section class="game-container">
+      <div class="dice-container">
+        <h2>Roll the Dice</h2>
+        
+        <div class="dice_container_One">
+
+            <div class="dice diceGrid dice_one_f1">
+                <p class ="dot"></p>
+            </div>
+            <div class="dice diceGrid dice_one_f2">
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+            </div>
+            <div class="dice diceGrid dice_one_f3">
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+            </div>
+            <div class="dice diceGrid dice_one_f4">
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+            </div>
+            <div class="dice diceGrid dice_one_f5">
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+            </div>
+            <div class="dice diceGrid dice_one_f6">
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+                <p class ="dot"></p>
+            </div>
+        
+        </div>
+
+        <button class="button" id="roll-button">Roll</button>
+      </div>
+      <div class="results-container" id="results-table">
+        <h2>Results</h2>
+        <ul id="results-list"></ul>
+      </div>
+
+      <form id="results-form" action="/gameResults" method="POST">
+        <input type="hidden" name="diceRollData" id="diceRollData">
+      </form>
+      
+    </section>
+
+    <% if (message) { %>
+        <h2><%= message%></h2>
+    <%}%>
+
+    <% if (names) { %>
+        <h2>Names:</h2>
+        <ul>
+          <% names.forEach(function(name) { %>
+            <li><%= name %></li>
+          <% }); %>
+        </ul>
+      <% } %>
+  </main>
+
+
+
+<script>
+    const btnDice = document.querySelector('.button');
+    const resultsList = document.getElementById('results-list');
+    const resultsData = [];
+    let rollCount = 1; // Track the roll count
+
+    function rollDie() {
+        return Math.floor(Math.random() * 6) + 1;
+    }
+   
+    btnDice.addEventListener('click', () => {
+        if (rollCount <= 5) {
+            let diceOneOne = document.querySelector('.dice_one_f1');
+            let diceOneTwo = document.querySelector('.dice_one_f2');
+            let diceOneThree = document.querySelector('.dice_one_f3');
+            let diceOneFour = document.querySelector('.dice_one_f4');
+            let diceOneFive = document.querySelector('.dice_one_f5');
+            let diceOneSix = document.querySelector('.dice_one_f6');
+
+            const rollResult = rollDie();
+
+            rollResult === 1 ? diceOneOne.style.zIndex = '1' : diceOneOne.style.zIndex = '0';
+            rollResult === 2 ? diceOneTwo.style.zIndex = '1' : diceOneTwo.style.zIndex = '0';
+            rollResult === 3 ? diceOneThree.style.zIndex = '1' : diceOneThree.style.zIndex = '0';
+            rollResult === 4 ? diceOneFour.style.zIndex = '1' : diceOneFour.style.zIndex = '0';
+            rollResult === 5 ? diceOneFive.style.zIndex = '1' : diceOneFive.style.zIndex = '0';
+            rollResult === 6 ? diceOneSix.style.zIndex = '1' : diceOneSix.style.zIndex = '0';
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `Roll ${rollCount}: ${rollResult}`;
+            listItem.classList.add('results-item');
+            resultsList.appendChild(listItem);
+            resultsData.push(rollResult);
+
+            rollCount++;
+        }
+
+        if (rollCount > 5) {
+            btnDice.disabled = true; // Disable the button after 5 rolls
+            // Set the value of the hidden input field with the JSON data
+            const diceRollDataInput = document.getElementById('diceRollData');
+            diceRollDataInput.value = JSON.stringify(resultsData);
+
+            // Submit the form to the backend
+            const resultsForm = document.getElementById('results-form');
+            resultsForm.submit();
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

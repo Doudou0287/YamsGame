@@ -1,0 +1,278 @@
+/* public/styles.css */
+
+/* Reset some default styles for consistency */
+body, h1, p {
+    
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set background color and text color */
+  body {
+    background-color: #f7f7f7;
+   
+    color: #333;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Main content container */
+  main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styles */
+
+  
+  /* Game description section */
+  .game-description {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+  
+  .game-description p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .game-description ol {
+    padding-left: 20px;
+  }
+  
+  /* Game start section */
+  .game-start {
+    margin-top: 20px;
+  }
+  
+  .game-start form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .game-start label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .game-start input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .game-start button {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .game-start button:hover {
+    background-color: #333;
+  }
+  
+
+  
+  .button-container {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline; 
+  }
+  
+  .play-button {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .play-button:hover {
+    background-color: #333;
+  }
+  
+  .note {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+  }
+  
+
+/* Game container styles */
+.game-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+
+  
+  /* Roll button styles */
+  #roll-button {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #roll-button:hover {
+    background-color: #333;
+  }
+  
+
+  #roll-button:disabled {
+    background-color: #ccc; /* Change to your desired color */
+    color: #666; /* Change to your desired color */
+    cursor: not-allowed;
+  }
+  
+  /* Keep the hover style for the enabled button */
+  #roll-button:not(:disabled):hover {
+    background-color: #333;
+  }
+  
+  /* Results styles */
+  .results-container {
+    width: 40%;
+  }
+  
+  .results-container h2 {
+    margin-bottom: 10px;
+  }
+  
+  #results-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .results-item {
+    margin-bottom: 5px;
+  }
+
+  /* styles.css */
+
+
+/* Dice styles */
+.dice_container_One{ 
+    grid-area: 3/ 2/ 4/ 3;
+    position: relative;
+   
+    height: 12rem;
+    /* margin: 100px 0px; */
+}
+
+/* >> the dice <<*/
+.dice{ position: absolute;
+    flex-basis: center;
+    width: 6rem;
+    height: 6rem;
+    padding: 15%;
+    background-color: aliceblue;
+    border: solid 0.15rem black;
+    border-radius: 1.5rem;
+    box-shadow: 0.05rem 0.8rem 0.8rem rgba(0, 0, 0, 0.12);
+}
+
+.dot{ border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.25rem;
+    background-color: black;
+}
+
+/* :: set a grid for the dice :: */
+.diceGrid{ display: grid;
+    grid-column: 1fr 1fr 1fr;
+    grid-row: 1fr 1fr 1fr;
+}
+
+
+/* :: the dice face :: */
+.dice_one_f1{ z-index: 0;}
+.dice_one_f1{ justify-content: center;}
+.dice_one_f1 :nth-child(1){ grid-area: 2 / 2 / 2 /2;}
+
+.dice_one_f2{ z-index: 0;}
+.dice_one_f2 .dot{margin-left: 20%;}
+.dice_one_f2 :nth-child(1){ grid-area: 1 / 1 / 1 ;}
+.dice_one_f2 :nth-child(2){ grid-area: 3 / 3 / 3 ;}
+
+.dice_one_f3{ z-index: 0;}
+.dice_one_f3{ justify-content: center;}
+.dice_one_f3 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_one_f3 :nth-child(2){ grid-area: 2/ 2/ 3;}
+.dice_one_f3 :nth-child(3){ grid-area: 3/ 3/ 3;}
+
+.dice_one_f4{ z-index: 0;}
+.dice_one_f4 .dot{ margin: 20%;}
+.dice_one_f4 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_one_f4 :nth-child(2){ grid-area: 1/ 3/ 1;}
+.dice_one_f4 :nth-child(3){ grid-area: 3/ 1/ 3;}
+.dice_one_f4 :nth-child(4){ grid-area: 3/ 3/ 3;}
+
+.dice_one_f5{ z-index: 0;}
+.dice_one_f5{ justify-content: center;}
+.dice_one_f5 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_one_f5 :nth-child(2){ grid-area: 1/ 3/ 1;}
+.dice_one_f5 :nth-child(3){ grid-area: 2/ 2/ 2;}
+.dice_one_f5 :nth-child(4){ grid-area: 3/ 1/ 3;}
+.dice_one_f5 :nth-child(5){ grid-area: 3/ 3/ 3;}
+
+.dice_one_f6{ z-index:0;}
+.dice_one_f6 .dot{ margin-left: 20%;}
+.dice_one_f6 :nth-child(1){ grid-area: 1/1/1}
+.dice_one_f6 :nth-child(2){ grid-area: 2/1/2}
+.dice_one_f6 :nth-child(3){ grid-area: 3/1/3}
+.dice_one_f6 :nth-child(4){ grid-area: 1/3/1}
+.dice_one_f6 :nth-child(5){ grid-area: 2/3/2}
+.dice_one_f6 :nth-child(6){ grid-area: 3/3/3}
+
+
+@media (max-width: 340px ) {
+
+    .dice{ width: 12rem; height: 12rem;}
+    .dot{ border-radius: 50%;
+        width: 1.6rem;
+        height: 1.6rem;
+        margin: 0 0.3rem 0 0.3rem;}
+}
+
+
+/* Error message styles */
+.error-message {
+  background-color: #ff0000; /* Red background color */
+  color: #fff; /* White text color */
+  padding: 10px; /* Padding around the message */
+  margin-top: 10px; /* Space below the message */
+ 
+}
+
+/* Success message styles */
+.success-message {
+  background-color: #5cb85c; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 10px; /* Padding around the message */
+  margin-bottom: 10px; /* Space below the message */
+  border: 1px solid #4cae4c; /* Green border */
+}
+
