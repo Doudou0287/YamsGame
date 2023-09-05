@@ -11,6 +11,7 @@ use chocolatey_game
 # Create collections for pastries and users
 db.createCollection("pastries")
 db.createCollection("users")
+db.createCollection("won_pastries") 
 
 # Create a unique index on the 'username' field of the 'users' collection
 db.users.createIndex({ "username": 1 }, { unique: true })
