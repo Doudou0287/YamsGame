@@ -37,5 +37,5 @@ db.users.insertOne({
 db.won_pastries.insertOne({
   name: "Chocolate Cake",
   user: "exampleUser",
-  wonDate: new Date()  // Add the current date and time
+  wonDate: new Date()  
 })
