@@ -25,9 +25,12 @@
         <h2>Start Playing</h2>
         <p>Choose how you want to play:</p>
         <div class="button-container1">
-          <a href="/game" class="play-button">Play Without Registration</a>
+          <% if (user){ %>
+           <a href="/game" class="play-button">Play</a>
+          <% } %>
           <% if (!user){ %>
-            <p> </p>
+            <a href="/game" class="play-button">Play Without Registration</a>
+            
             <p class="note">Login or sign up for a chance to win more pastries!</p>
 
             <form action="/signup" method="POST">
@@ -37,7 +40,7 @@
               <label for="password">Password:</label>
               <input type="password" id="password" name="password" required>
               <br>
-              <button type="submit">Sign Up</button>
+              <button type="submit">Play</button>
             </form>
             <% if (errorMessage) { %>
               <div class="error-message"><%= errorMessage %></div>
