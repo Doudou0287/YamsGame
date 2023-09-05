@@ -39,3 +39,18 @@ db.wonpastries.insertOne({
   user: "exampleUser",
   wonDate: new Date()  
 })
+```
+
+## Système d'Inscription et de Connexion
+
+Dans le projet, j'ai mis en place un système d'inscription et de connexion. Bien que l'inscription ne soit pas obligatoire pour jouer au jeu, j'ai décidé de créer un formulaire d'inscription et d'ajouter quelques fonctionnalités pour les utilisateurs inscrits. Ces fonctionnalités comprennent la possibilité de consulter les résultats du jeu et de se déconnecter.
+
+### Formulaire d'Inscription et de Connexion
+
+Le formulaire d'inscription sert à la fois à l'inscription et à la connexion des utilisateurs. Si un utilisateur existe déjà dans le système, cela est considéré comme une tentative de connexion. Sinon, il est considéré comme une nouvelle inscription.
+
+### Consultation des Résultats
+
+Les utilisateurs inscrits ont accès à la consultation des résultats du jeu. Dans la section des résultats, j'affiche le nom d'utilisateur du gagnant. Si le gagnant était connecté lors de sa victoire, son nom d'utilisateur réel est affiché. Sinon, j'affiche "utilisateur aléatoire" pour indiquer que le gagnant n'était pas connecté lors de sa victoire.
+
+Ce système offre une manière pratique pour les utilisateurs de suivre leurs résultats de jeu et offre des fonctionnalités supplémentaires à ceux qui choisissent de s'inscrire.
