@@ -3,7 +3,7 @@ import Pastry from '../Models/Pastry.js';
 import User from '../Models/User.js';
 import bcrypt from 'bcrypt';
 
-let names = []
+
 export const HomeController = (req, res) => {
   const errorMessage = req.session.errorMessage || ''; // Get the error message from the session
 
@@ -24,11 +24,6 @@ export const gameController = (req, res) => {
   res.render('home/game',  { message, names, successMessage });
 };
 
-// export const resultController = (req, res) => {
-//   const diceRollData = JSON.parse(req.body.diceRollData);
-//   res.render('home/gameRes', { diceRollData });
-// };
-
 export const resultController = async (req, res) => {
   const successMessage = req.session.successMessage || '';
   const diceRollData = JSON.parse(req.body.diceRollData);
@@ -38,7 +33,7 @@ export const resultController = async (req, res) => {
   const isDouble = checkForDouble(diceRollData);
   let message
   let pastryNames = [];
-  
+  let names = []
   if (isYams) {
     // Deduct 3 pastries at random from the database
     const randomPastries = await Pastry.aggregate([
