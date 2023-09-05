@@ -11,7 +11,7 @@ use chocolatey_game
 # Create collections for pastries and users
 db.createCollection("pastries")
 db.createCollection("users")
-db.createCollection("won_pastries") 
+db.createCollection("wonpastries") 
 
 # Create a unique index on the 'username' field of the 'users' collection
 db.users.createIndex({ "username": 1 }, { unique: true })
@@ -32,4 +32,10 @@ db.pastries.insertMany([
 db.users.insertOne({
   username: "exampleUser",
   password: "hashedPassword"
+})
+
+db.wonpastries.insertOne({
+  name: "Chocolate Cake",
+  user: "exampleUser",
+  wonDate: new Date()  
 })
